@@ -53,8 +53,8 @@ async function displayData(data, selectionType) {
     let current = 0;
     
     dataToDisplay.forEach((value, key) =>{
-        const currentTime = value.current < 1 ? 'hrs' : 'hr';
-        const previousTime = value.previous < 1  ? 'hrs' : 'hr';
+        const currentTime = value.current > 1 ? 'hrs' : 'hr';
+        const previousTime = value.previous > 1  ? 'hrs' : 'hr';
         const hours =  cards[current].querySelector('.hours');
         const previous =  cards[current].querySelector('.previous');
         hours.textContent = value.current + currentTime;

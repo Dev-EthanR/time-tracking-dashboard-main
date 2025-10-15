@@ -55,18 +55,20 @@ async function displayData(data, selectionType) {
         weekly: 'Last Week',
         monthly: 'Last Month'
     };
-    
-    let current = 0;
-    
-    dataToDisplay.forEach((value, key) =>{
-        const currentTime = value.current > 1 ? 'hrs' : 'hr';
-        const previousTime = value.previous > 1  ? 'hrs' : 'hr';
-        const hours =  cards[current].querySelector('.hours');
-        const previous =  cards[current].querySelector('.previous');
-        hours.textContent = value.current + currentTime;
-        previous.textContent = `${label[selectionType]}  - ${value.previous}${previousTime}`
-           
-        current++       
+    cards.forEach(card => {
+        const title = card.previousElementSibling.querySelector('.content-heading').textContent.trim().toLowerCase();;
+        let timeData;
+        dataToDisplay.forEach((value, key) => {
+            if(key.toLowerCase().trim() === title)
+                timeData = value;
+        });
+        
+        if (!timeData) return
+        const currentTime = timeData.current > 1 ? 'hrs' : 'hr';
+        const previousTime = timeData.previous > 1  ? 'hrs' : 'hr';
+        const hours =  card.querySelector('.hours');
+        const previous =  card.querySelector('.previous');
+        hours.textContent = timeData.current + currentTime;
+        previous.textContent = `${label[selectionType]}  - ${timeData.previous}${previousTime}`
     });
-    dataToDisplay.forEach((value, key) => console.log(key, value))
 }

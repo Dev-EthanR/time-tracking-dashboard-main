@@ -63,6 +63,5 @@ async function displayData(data, selectionType) {
             + value.previous + time;
         current++       
     });
-    console.log(`cards: ${cards.length},`)
     dataToDisplay.forEach((value, key) => console.log(key, value))
 }

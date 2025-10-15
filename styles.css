@@ -15,11 +15,13 @@
 
 /* Typography */
 body {
+    background-color: rgb(14, 19, 35);
     font-family: "Rubik", sans-serif;
     font-size: 1.5rem;
     line-height: 1.8;
     font-weight: 400;
     color: var(--navy-200);
+    height: 100vh;
 }
 
 h1, h2, h3 {

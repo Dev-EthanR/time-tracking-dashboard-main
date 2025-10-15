@@ -284,13 +284,14 @@ ul {
         transform: translateY(-9px);
     }
     .background {
-        width: 188px;
+        width: 228px;
         height: 55px;
     }
 
     .content {
         transform: translateY(-24px);
         padding-bottom: 2rem;
+        max-width: 228px;
     }
 
     .data-content {

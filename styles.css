@@ -149,12 +149,12 @@ ul {
     transition: color 0.3s ease;
 }
 
-.toggle:hover {
+.selection-toggle:hover {
     color: rgba(255, 255, 255, 0.6);
     cursor: pointer;
 }
-.toggle[aria-selected="true"],
-.toggle:active {
+.selection-toggle[aria-selected="true"],
+.selection-toggle:active {
     color: #fff;
 }
 @media screen and (min-width: 680px) {

@@ -53,14 +53,15 @@ async function displayData(data, selectionType) {
     let current = 0;
     
     dataToDisplay.forEach((value, key) =>{
-        const time = value.current < 1 || value.previous < 1 ? 'hrs' : 'hr';
+        const currentTime = value.current < 1 ? 'hrs' : 'hr';
+        const previousTime = value.previous < 1  ? 'hrs' : 'hr';
         const hours =  cards[current].querySelector('.hours');
         const previous =  cards[current].querySelector('.previous');
-        hours.textContent = value.current + time;
+        hours.textContent = value.current + currentTime;
         previous.textContent = (selectionType === 'daily' ? 
             'Yesterday - ' : 
             `Last ${selectionType.charAt(0).toUpperCase() + selectionType.slice(1, -2)} - `) 
-            + value.previous + time;
+            + value.previous + previousTime;
         current++       
     });
     dataToDisplay.forEach((value, key) => console.log(key, value))

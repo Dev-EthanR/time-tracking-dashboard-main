@@ -50,6 +50,12 @@ async function getData(typeOfData){
 async function displayData(data, selectionType) {
     const dataToDisplay = await data;
     const cards = document.querySelectorAll('.data-content');    
+    const label = {
+        daily: 'Yesterday',
+        weekly: 'Last Week',
+        monthly: 'Last Month'
+    };
+    
     let current = 0;
     
     dataToDisplay.forEach((value, key) =>{
@@ -58,10 +64,8 @@ async function displayData(data, selectionType) {
         const hours =  cards[current].querySelector('.hours');
         const previous =  cards[current].querySelector('.previous');
         hours.textContent = value.current + currentTime;
-        previous.textContent = (selectionType === 'daily' ? 
-            'Yesterday - ' : 
-            `Last ${selectionType.charAt(0).toUpperCase() + selectionType.slice(1, -2)} - `) 
-            + value.previous + previousTime;
+        previous.textContent = `${label[selectionType]}  - ${value.previous}${previousTime}`
+           
         current++       
     });
     dataToDisplay.forEach((value, key) => console.log(key, value))

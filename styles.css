@@ -1,7 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 :root {
     --primary-color: rgb(28, 32, 75);
     --navy-200: rgb(187, 192, 255);
     --purple-600: rgb(81, 71, 234);
     --purple-500: rgb(112, 120, 201);
     --shadow-color: rgba(216, 216, 216, 1);
+}
+
+
+body {
+    font-family: "Rubik", sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    font-weight: 400;
+    color: var(--navy-200);
+}
+
+h1, h2, h3 {
+    color: #fff;
+}
+h1 {
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: 2.8;
+}
+
+h2 {
+    font-size: 1.8rem;
+    line-height: 2.1;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 3.2rem;
+    line-height: 3.8;
+    font-weight: 300;
+}
+
+@media screen and (min-width: 600px) {
+    h3 {
+        font-size: 5.6rem;
+        line-height: 6.6;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    h1 {
+        font-size: 4rem;
+        line-height: 4.7;
+    }
 }

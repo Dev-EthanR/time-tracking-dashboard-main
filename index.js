@@ -58,6 +58,7 @@ async function displayData(data, selectionType) {
     cards.forEach(card => {
         const title = card.previousElementSibling.querySelector('.content-heading').textContent.trim().toLowerCase();;
         let timeData;
+        // match the data title to the current card
         dataToDisplay.forEach((value, key) => {
             if(key.toLowerCase().trim() === title)
                 timeData = value;
